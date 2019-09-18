@@ -8,8 +8,6 @@ class HomeContainer extends Component {
     return (
       <div>
         <NavigationBar page='home' />
-        <Segment textAlign='center' fluid basic>
-        </Segment>
       </div>
     )
   }

@@ -31,7 +31,7 @@ class NavigationBar extends Component {
           </Dropdown>
         </Responsive>
 
-        <Responsive as={Menu} fluid inverted  widths='1' size='small' minWidth={501}>
+        <Responsive as={Menu} fluid inverted  widths='2' size='small' minWidth={501}>
           <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image src={require('../../../../public/favicon.ico')} size='mini' /></Menu.Item>
         </Responsive>
       </div>
