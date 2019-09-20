@@ -72,3 +72,5 @@ gem 'httparty'
 gem 'dotenv-rails'
 
 gem 'devise'
+
+gem 'react_on_rails'
