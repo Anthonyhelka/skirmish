@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+
+  <% if user_signed_in? %>
+    <div class="ui two item fluid stackable menu navbar">
+      <a class="item navbar-button" onclick="window.location.href='/'"><%= image_tag 'scuttlescrims-logo.png' %></a>
+      <div class="item navbar-button"><%= link_to("Logout", destroy_user_session_path, method: :delete) %></div>
+    </div>
+  <% else %>
+    <div class="ui three item inverted fluid stackable menu navbar">
+      <a class="item navbar-button" onclick="window.location.href='/'"><%= image_tag 'scuttlescrims-logo.png' %></a>
+      <div class="item navbar-button"><%= link_to "Sign Up", new_user_registration_path %></div>
+      <div class="item navbar-button"><%= link_to "Sign In", new_user_session_path %></div>
+    </div>
+  <% end %>
