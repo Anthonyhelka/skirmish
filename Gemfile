@@ -70,3 +70,7 @@ gem 'pry-rails', group: [:development, :test]
 gem 'httparty'
 
 gem 'dotenv-rails'
+
+gem 'devise'
+
+gem 'react_on_rails'

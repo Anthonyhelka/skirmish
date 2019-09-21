@@ -9,12 +9,14 @@
 </head>
 <body>
 
+  <%= render "layouts/navbar" %>
+
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
     </div>
   <%- end -%>
-
+  
   <%= yield %>
 
   <%- if Rails.env.development? || Rails.env.test? -%>
@@ -25,5 +27,6 @@
   <%= javascript_pack_tag 'application' %>
 
   <%= yield :extra_footer %>
+
 </body>
 </html>
