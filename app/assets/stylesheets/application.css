@@ -5,6 +5,7 @@ body {
 
 .navbar {
   margin-top: 0px !important;
+  margin-bottom: 0px !important;
   border-radius: 0px !important;
 }
 
@@ -17,11 +18,11 @@ body {
   border-bottom: 3px solid #000000 !important;
 }
 
-.navbar:hover {
-  border-bottom: none !important;
-}
-
 .navbar-button:hover {
   background-color: #444444 !important;
   border-bottom: 3px solid #21B714 !important;
+}
+
+.flash-message {
+  text-align: center !important;
 }

@@ -11,12 +11,6 @@
 
   <%= render "layouts/navbar" %>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
-
   <%= yield %>
 
   <%- if Rails.env.development? || Rails.env.test? -%>
@@ -24,6 +18,7 @@
       window.railsEnv = '<%= Rails.env %>'
     <%- end -%>
   <%- end -%>
+  
   <%= javascript_pack_tag 'application' %>
 
   <%= yield :extra_footer %>
