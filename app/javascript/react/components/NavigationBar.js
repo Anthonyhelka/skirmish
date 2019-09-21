@@ -6,9 +6,10 @@ class NavigationBar extends Component {
   constructor(props) {
     super(props);
     this.state={
-      currentUser: null,
-      home: false
+      home: false,
+      isLoggedIn: null
     }
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillMount() {
@@ -22,38 +23,39 @@ class NavigationBar extends Component {
   }
 
   componentDidMount() {
-  fetch('/homes/index')
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status}(${response.statusText})`;
-        let error = new Error(errorMessage);
-        throw(error);
-      }
+    fetch('/api/v1')
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status}(${response.statusText})`;
+          let error = new Error(errorMessage);
+          throw(error);
+        }
       })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({ currentUser: currentUser })
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ isLoggedIn: body.signed_in })
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  handleClick(event, url) {
+    window.location.href = url
   }
 
   render() {
     return (
       <div>
-        <Responsive as={Menu} fluid inverted stackable widths='1' maxWidth={500}>
-          <Dropdown item text={<Image src={require('../../../../public/favicon.ico')} />}>
-            <Dropdown.Menu textAlign='center'>
-              <Dropdown.Item text='Home' as={ Link } to='/' active={this.state.home} />
-            </Dropdown.Menu>
-          </Dropdown>
-        </Responsive>
-
         <Responsive as={Menu} fluid inverted  widths='2' size='small' minWidth={501}>
           <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image src={require('../../../../public/favicon.ico')} size='mini' /></Menu.Item>
-          <Menu.Item name='login' as={ Link } to='/users/sign_in'>Login</Menu.Item>
-
+          {this.state.isLoggedIn ?
+            (
+              <Menu.Item name='logout' onClick={event => this.handleClick(event, '/users/sign_out')}>Logout</Menu.Item>
+            ) : (
+              <Menu.Item name='login' onClick={event => this.handleClick(event, '/users/sign_in')}>Login</Menu.Item>
+            )
+          }
         </Responsive>
       </div>
     )
