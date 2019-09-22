@@ -3,26 +3,56 @@ body {
   background-color: white !important;
 }
 
-.navbar {
+/* Navbar */
+
+/* Tablet & Desktop */
+.navbar-desktop {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
   border-radius: 0px !important;
 }
 
-.navbar a {
+.navbar-desktop a {
   color: #FFFFFF !important;
 }
 
-.navbar-button {
+.navbar-button-desktop {
   background-color: #000000 !important;
   border-bottom: 3px solid #000000 !important;
 }
 
-.navbar-button:hover {
+.navbar-button-desktop:hover {
   background-color: #444444 !important;
   border-bottom: 3px solid #21B714 !important;
 }
 
+/* Mobile */
+.navbar-mobile {
+  background-color: #000000 !important;
+  text-align: center !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.navbar-mobile a {
+  color: #000000 !important;
+}
+
+.navbar-dropdown-icon-mobile {
+  color: #FFFFFF !important;
+  padding-left: 0px !important;
+}
+
+.navbar-image-mobile img {
+  text-align: center !important;
+  margin-right: 0px !important;
+}
+
+.navbar-button-mobile {
+  background-color: #FFFFFF !important;
+}
+
+/* Flash Messages */
 .flash-message {
   text-align: center !important;
 }

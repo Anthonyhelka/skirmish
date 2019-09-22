@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+
+<div class="navbar-mobile ui simple inverted fluid selection dropdown">
+  <input type="hidden" name="menu">
+  <i class="navbar-dropdown-icon-mobile dropdown icon"></i>
+  <div class="navbar-image-mobile default text"><%= image_tag 'scuttlescrims-logo.png' %></div>
+  <div class="menu">
+    <div class="navbar-button-mobile item" data-value="0" onclick="window.location.href='/'">Home</div>
+    <% if user_signed_in? %>
+      <div class="navbar-button-mobile item"><%= link_to "Edit Profile", edit_user_registration_path %></div>
+      <div class="navbar-button-mobile item" data-value="1"><%= link_to("Sign Out", destroy_user_session_path, method: :delete) %></div>
+    <% else %>
+      <div class="navbar-button-mobile item" data-value="3"><%= link_to "Sign In", new_user_session_path %></div>
+      <div class="navbar-button-mobile item" data-value="2"><%= link_to "Sign Up", new_user_registration_path %></div>
+    <% end %>
+  </div>
+</div>
