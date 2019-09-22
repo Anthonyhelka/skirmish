@@ -5,7 +5,7 @@
   <i class="navbar-dropdown-icon-mobile dropdown icon"></i>
   <div class="navbar-image-mobile default text"><%= image_tag 'scuttlescrims-logo.png' %></div>
   <div class="menu">
-    <div class="navbar-button-mobile item" data-value="0" onclick="window.location.href='/'">Home</div>
+    <div class="navbar-button-mobile item" data-value="0"><a onclick="window.location.href='/'">Home</a></div>
     <% if user_signed_in? %>
       <div class="navbar-button-mobile item"><%= link_to "Edit Profile", edit_user_registration_path %></div>
       <div class="navbar-button-mobile item" data-value="1"><%= link_to("Sign Out", destroy_user_session_path, method: :delete) %></div>
