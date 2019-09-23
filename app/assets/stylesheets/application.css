@@ -1,6 +1,13 @@
 body {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
   background-image: url("https://columbiaairport.com/wp-content/uploads/2015/12/CAE-Website-Full-Background-Texture1902x1200-9.jpg") !important;
   background-color: white !important;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, label {
+ font-family: 'Oswald', sans-serif;
+ text-transform: uppercase;
 }
 
 /* Navbar */
@@ -54,5 +61,38 @@ body {
 
 /* Flash Messages */
 .flash-message {
+  text-align: center !important;
+}
+
+/* Devise Forms */
+.devise-forms-container {
+  text-align: center !important;
+  width: 50% !important;
+}
+
+/* Header */
+.devise-forms-header {
+  vertical-align: middle !important;
+  border: 3px solid #61B38E !important;
+}
+
+.devise-forms-header-title {
+  font-size: 30px !important;
+  vertical-align: middle !important;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.devise-forms-scuttlecrab img {
+  height: 30px !important;
+  width: auto !important;
+  vertical-align: middle !important;
+}
+
+.devise-forms-sign-in-container {
+  border: 3px solid #61B38E !important;
+}
+
+.devise-forms-sign-in-forms {
   text-align: center !important;
 }
