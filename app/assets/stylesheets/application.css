@@ -1,13 +1,6 @@
 body {
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
   background-image: url("https://columbiaairport.com/wp-content/uploads/2015/12/CAE-Website-Full-Background-Texture1902x1200-9.jpg") !important;
   background-color: white !important;
-}
-
-h1, h2, h3, h4, h5, h6, a, p, label {
- font-family: 'Oswald', sans-serif;
- text-transform: uppercase;
 }
 
 /* Navbar */
@@ -59,40 +52,75 @@ h1, h2, h3, h4, h5, h6, a, p, label {
   background-color: #FFFFFF !important;
 }
 
-/* Flash Messages */
-.flash-message {
+/* Messages */
+.welcome-message {
   text-align: center !important;
+}
+
+.flash-error-message-container {
+  text-align: center !important;
+}
+
+.flash-error-message {
+  text-align: center !important;
+  color: red !important;
 }
 
 /* Devise Forms */
-.devise-forms-container {
+.devise-login-container {
   text-align: center !important;
-  width: 50% !important;
-}
-
-/* Header */
-.devise-forms-header {
-  vertical-align: middle !important;
+  width: 25% !important;
+  margin: auto !important;
+  margin-top: 75px !important;
   border: 3px solid #61B38E !important;
 }
 
-.devise-forms-header-title {
-  font-size: 30px !important;
-  vertical-align: middle !important;
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
-}
 
-.devise-forms-scuttlecrab img {
-  height: 30px !important;
-  width: auto !important;
+.devise-login-image img {
+  width: 15% !important;
+  height: auto !important;
   vertical-align: middle !important;
 }
 
-.devise-forms-sign-in-container {
-  border: 3px solid #61B38E !important;
+
+.devise-login-fields-container {
+  text-align: center !important;
 }
 
-.devise-forms-sign-in-forms {
+
+.devise-login-checkbox {
+  padding-bottom: 10px !important;
+}
+
+.devise-login-checkbox input {
+  vertical-align: middle !important;
+}
+
+.devise-login-submit {
+  padding-bottom: 10px !important;
+}
+
+.devise-login-submit input {
+  background-color: #61B38E !important;
+  color: #FFFFFF !important;
+  width: 115px !important;
+  height: 25px !important;
+  border-radius: 3px !important;
+  border: 1px solid black !important;
+  vertical-align: middle !important;
+}
+
+.devise-login-submit:hover input {
+  background-color: #FFFFFF !important;
+  color: #61B38E !important;
+  width: 115px !important;
+  height: 25px !important;
+  border-radius: 3px !important;
+  border: 1px solid black !important;
+  vertical-align: middle !important;
+}
+
+.devise-login-shared-links {
+  padding: 10px !important;
   text-align: center !important;
 }

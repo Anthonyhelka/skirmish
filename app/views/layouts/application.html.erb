@@ -16,16 +16,8 @@
     <%= render "layouts/navbar_desktop" %>
   <% end %>
 
-  <div class="flash-message">
-    <%- flash.each do |key, value| -%>
-      <div class="flash flash-<%= key %>">
-        <%= value %>
-      </div>
-    <%- end -%>
-  </div>
-
   <% if user_signed_in? %>
-    <div class="flash-message">Signed in as: <b><%= current_user.username %></b></div>
+    <div class="welcome-message">Welcome, <b><%= current_user.username %></b></div>
   <% end %>
 
   <%= yield %>

@@ -1,49 +1,44 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-<link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
 
-<div class="devise-forms-container ui raised segment">
-
-  <div class="devise-forms-header ui raised segment">
-    <span class="devise-forms-scuttlecrab"><%= image_tag 'scuttlecrab.png' %></span>
-    &nbsp;
-    <span class="devise-forms-header-title">Sign In</span>
-    &nbsp;
-    <span class="devise-forms-scuttlecrab"><%= image_tag 'scuttlecrab.png' %></span>
-  </div>
-
-  <div class="devise-forms-sign-in-container ui raised segment">
-  <div class="devise-forms-sign-in-forms ui form">
+<div class="devise-login-container ui raised segment">
+  <div class="devise-login-image"><%= image_tag 'scuttlecrab.png' %></div>
+  <div class="devise-login-fields-container ui form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="devise-forms-sign-in-forms two fields">
-        <div class="eight wide field">
+      <div class="devise-login-fields">
+        <br />
+        <div class="field">
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
-
-        <div class="eight wide field">
+        <div class="field">
           <%= f.label :password %>
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
       </div>
-
-
-
-
-
+      <br />
       <% if devise_mapping.rememberable? %>
-        <div class="ui checkbox">
+        <div class="devise-login-checkbox ui checkbox">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
       <% end %>
 
-      <div class="actions">
-        <%= f.submit "Sign In" %>
+      <div class="devise-login-submit">
+        <%= f.submit "Login" %>
       </div>
     <% end %>
 
-  </div>
+    <div class="flash-error-message-container">
+      <%- flash.each do |key, value| -%>
+        <div class="ui negative message flash flash-<%= key %>">
+          <%= value %>
+        </div>
+      <%- end -%>
+    </div>
+
   </div>
 </div>
 
-<%= render "devise/shared/links" %>
+<div class="devise-login-shared-links">
+  <%= render "devise/shared/links" %>
+</div>
