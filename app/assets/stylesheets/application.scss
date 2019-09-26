@@ -1,6 +1,14 @@
 body {
-  background-image: url("https://columbiaairport.com/wp-content/uploads/2015/12/CAE-Website-Full-Background-Texture1902x1200-9.jpg") !important;
+  background-image: url(asset-path('beanstalk.png')) !important;
   background-color: white !important;
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 120s linear infinite;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
 }
 
 /* Navbar */
@@ -67,7 +75,7 @@ body {
 }
 
 /* Devise Forms */
-.devise-login-container {
+.devise-login-container-desktop {
   text-align: center !important;
   width: 25% !important;
   margin: auto !important;
@@ -75,6 +83,11 @@ body {
   border: 3px solid #61B38E !important;
 }
 
+.devise-login-container-mobile {
+  text-align: center !important;
+  width: 100% !important;
+  margin: auto !important;
+}
 
 .devise-login-image img {
   width: 15% !important;
@@ -87,6 +100,12 @@ body {
   text-align: center !important;
 }
 
+.devise-field input {
+  border: 1px solid #DEDEDF !important;
+}
+.devise-field input:focus {
+  border: 1px solid #61B38E !important;
+}
 
 .devise-login-checkbox {
   padding-bottom: 10px !important;

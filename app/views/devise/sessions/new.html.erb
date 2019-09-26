@@ -1,16 +1,20 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 
-<div class="devise-login-container ui raised segment">
+<% if detect_device == "mobile" %>
+  <div class="devise-login-container-mobile ui raised segment">
+<% else %>
+  <div class="devise-login-container-desktop ui raised segment">
+<% end %>
   <div class="devise-login-image"><%= image_tag 'scuttlecrab.png' %></div>
   <div class="devise-login-fields-container ui form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="devise-login-fields">
         <br />
-        <div class="field">
+        <div class="devise-field field">
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
-        <div class="field">
+        <div class="devise-field field">
           <%= f.label :password %>
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
