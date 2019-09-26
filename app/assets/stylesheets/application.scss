@@ -1,11 +1,12 @@
 body {
-  background-image: url(asset-path('beanstalk.png')) !important;
+  background-image: url(asset-path('beanstalk-background.png')) !important;
   background-color: white !important;
   background-position: 0px 0px;
   background-repeat: repeat-x;
   animation: animatedBackground 120s linear infinite;
 }
 
+ /* Background Animation */
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
 	to { background-position: 100% 0; }
@@ -18,6 +19,7 @@ body {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
   border-radius: 0px !important;
+  z-index: 1 !important;
 }
 
 .navbar-desktop a {
@@ -40,6 +42,7 @@ body {
   text-align: center !important;
   padding-left: 0px !important;
   padding-right: 0px !important;
+  z-index: 1 !important;
 }
 
 .navbar-mobile a {
@@ -56,7 +59,7 @@ body {
   margin-right: 0px !important;
 }
 
-.navbar-button-mobile {
+.navbar-button-mobile div {
   background-color: #FFFFFF !important;
 }
 
@@ -75,28 +78,29 @@ body {
 }
 
 /* Devise Forms */
-.devise-login-container-desktop {
+.devise-container-mobile,
+.devise-container-desktop {
   text-align: center !important;
-  width: 25% !important;
   margin: auto !important;
+}
+
+.devise-container-mobile {
+  width: 100% !important;
+}
+
+.devise-container-desktop {
+  width: 25% !important;
   margin-top: 75px !important;
   border: 3px solid #61B38E !important;
 }
 
-.devise-login-container-mobile {
-  text-align: center !important;
-  width: 100% !important;
-  margin: auto !important;
-}
-
-.devise-login-image img {
+.devise-image img {
   width: 15% !important;
   height: auto !important;
   vertical-align: middle !important;
 }
 
-
-.devise-login-fields-container {
+.devise-fields-container {
   text-align: center !important;
 }
 
@@ -107,39 +111,52 @@ body {
   border: 1px solid #61B38E !important;
 }
 
-.devise-login-checkbox {
+.devise-checkbox,
+.devise-submit {
   padding-bottom: 10px !important;
 }
 
-.devise-login-checkbox input {
+.devise-checkbox input {
   vertical-align: middle !important;
 }
 
-.devise-login-submit {
-  padding-bottom: 10px !important;
+.devise-submit input,
+.devise-submit input:hover {
+  width: 115px !important;
+  height: 25px !important;
+  border-radius: 3px !important;
+  border: 1px solid black !important;
+  vertical-align: middle !important;
 }
 
-.devise-login-submit input {
+.devise-submit input {
   background-color: #61B38E !important;
   color: #FFFFFF !important;
-  width: 115px !important;
-  height: 25px !important;
-  border-radius: 3px !important;
-  border: 1px solid black !important;
-  vertical-align: middle !important;
 }
 
-.devise-login-submit:hover input {
+.devise-submit input:hover {
   background-color: #FFFFFF !important;
   color: #61B38E !important;
-  width: 115px !important;
+  border: 2px solid #61B38E !important;
+}
+
+.devise-delete-account input {
+  width: 140px !important;
   height: 25px !important;
   border-radius: 3px !important;
   border: 1px solid black !important;
   vertical-align: middle !important;
+  background-color: #b36186 !important;
+  color: #FFFFFF !important;
 }
 
-.devise-login-shared-links {
+.devise-delete-account input:hover {
+  background-color: #FFFFFF !important;
+  color: #b36186 !important;
+  border: 2px solid #b36186 !important;
+}
+
+.devise-shared-links {
   padding: 10px !important;
   text-align: center !important;
 }

@@ -16,10 +16,6 @@
     <%= render "layouts/navbar_desktop" %>
   <% end %>
 
-  <% if user_signed_in? %>
-    <div class="welcome-message">Welcome, <b><%= current_user.username %></b></div>
-  <% end %>
-
   <%= yield %>
 
   <%- if Rails.env.development? || Rails.env.test? -%>

@@ -1,15 +1,20 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 
 <% if detect_device == "mobile" %>
-  <div class="devise-login-container-mobile ui raised segment">
+  <div class="devise-container-mobile ui raised segment">
 <% else %>
-  <div class="devise-login-container-desktop ui raised segment">
+  <div class="devise-container-desktop ui raised segment">
 <% end %>
-  <div class="devise-login-image"><%= image_tag 'scuttlecrab.png' %></div>
-  <div class="devise-login-fields-container ui form">
+
+  <div class="devise-image"><%= image_tag 'scuttlecrab.png' %></div>
+  <div class="devise-fields-container ui form">
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <div class="devise-login-fields">
+
+      <div class="devise-fields">
+
         <br />
+
         <div class="devise-field field">
           <%= f.label :username %>
           <%= f.text_field :username, autofocus: true %>
@@ -33,8 +38,10 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
       </div>
+
       <br />
-      <div class="devise-login-submit">
+
+      <div class="devise-submit">
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
@@ -46,10 +53,9 @@
         </div>
       </div>
     <% end %>
-
   </div>
 </div>
 
-<div class="devise-login-shared-links">
+<div class="devise-shared-links">
   <%= render "devise/shared/links" %>
 </div>
