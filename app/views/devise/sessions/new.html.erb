@@ -1,9 +1,7 @@
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-
 <div class="devise-container-<%= detect_device %> ui raised segment">
   <div class="devise-image"><%= image_tag 'scuttlecrab.png' %></div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  
+
     <div class="devise-fields-container ui form">
       <div class="devise-fields"><br />
         <div class="devise-field field">
