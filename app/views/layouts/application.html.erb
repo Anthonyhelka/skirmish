@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <%= render "layouts/navbar" %>
-
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+  <% if detect_device == "mobile" %>
+    <%= render "layouts/navbar_mobile" %>
+  <% else %>
+    <%= render "layouts/navbar_desktop" %>
+  <% end %>
 
   <%= yield %>
 
@@ -24,6 +23,7 @@
       window.railsEnv = '<%= Rails.env %>'
     <%- end -%>
   <%- end -%>
+
   <%= javascript_pack_tag 'application' %>
 
   <%= yield :extra_footer %>

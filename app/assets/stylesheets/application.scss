@@ -1,0 +1,159 @@
+body {
+  background-image: url(asset-path('beanstalk-background.png')) !important;
+  background-color: white !important;
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 120s linear infinite;
+}
+
+ /* Background Animation */
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+/* Navbar */
+
+/* Tablet & Desktop */
+.navbar-desktop {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
+  z-index: 1 !important;
+}
+
+.navbar-desktop a {
+  color: #FFFFFF !important;
+}
+
+.navbar-button-desktop {
+  background-color: #000000 !important;
+  border-bottom: 3px solid #000000 !important;
+}
+
+.navbar-button-desktop:hover {
+  background-color: #444444 !important;
+  border-bottom: 3px solid #21B714 !important;
+}
+
+/* Mobile */
+.navbar-mobile {
+  background-color: #000000 !important;
+  text-align: center !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  z-index: 1 !important;
+}
+
+.navbar-mobile a {
+  color: #000000 !important;
+}
+
+.navbar-dropdown-icon-mobile {
+  color: #FFFFFF !important;
+  padding-left: 0px !important;
+}
+
+.navbar-image-mobile img {
+  text-align: center !important;
+  margin-right: 0px !important;
+}
+
+.navbar-button-mobile div {
+  background-color: #FFFFFF !important;
+}
+
+/* Messages */
+.welcome-message {
+  text-align: center !important;
+}
+
+.flash-error-message-container {
+  text-align: center !important;
+}
+
+.flash-error-message {
+  margin-bottom: 10px !important;
+}
+
+.flash-error-message ul {
+  padding: 0px !important;
+  text-align: center !important;
+}
+
+/* Devise Forms */
+.devise-container-mobile,
+.devise-container-desktop {
+  text-align: center !important;
+  margin: auto !important;
+  padding-bottom: 0px !important;
+}
+
+.devise-container-mobile {
+  width: 100% !important;
+}
+
+.devise-container-desktop {
+  width: 25% !important;
+  margin-top: 50px !important;
+  border: 3px solid #61B38E !important;
+}
+
+.devise-image img {
+  width: 15% !important;
+  height: auto !important;
+  vertical-align: middle !important;
+}
+
+.devise-fields-container {
+  text-align: center !important;
+}
+
+.devise-field input {
+  border: 1px solid #DEDEDF !important;
+}
+.devise-field input:focus {
+  border: 1px solid #61B38E !important;
+}
+
+/* Devise Buttons */
+.devise-button-container {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.devise-button {
+  background-color: #61B38E !important;
+}
+
+.devise-button:hover {
+  background-color: #4183c4 !important;
+}
+
+.devise-delete-button-container {
+  padding-bottom: 10px !important;
+}
+
+.devise-delete-button {
+  background-color: #9f3a38 !important;
+  border: 1px solid #FFFFFF !important;
+}
+
+.devise-delete-button:hover {
+  background-color: #fff6f6 !important;
+  color: #9f3a38 !important;
+  border: 1px solid #9f3a38 !important;
+}
+
+.devise-checkbox {
+  padding-top: 10px !important;
+}
+
+.devise-checkbox input {
+  vertical-align: middle !important;
+}
+
+.devise-shared-links {
+  padding: 10px !important;
+  text-align: center !important;
+}

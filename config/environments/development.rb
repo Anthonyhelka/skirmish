@@ -1,4 +1,6 @@
 Rails.application.configure do
+  require 'dotenv'
+  Dotenv.load('keys.env')
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -27,8 +29,23 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  
+  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.default_url_options = { :host => ENV["HOST_DOMAIN_DEV"] }
+
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => 587,
+    :authentication => :plain,
+    :user_name      => ENV["SENDGRID_USER_NAME"],
+    :password       => ENV["SENDGRID_PASSWORD"],
+    :domain         => ENV["HOST_DOMAIN_DEV"],
+    :enable_starttls_auto => true
+  }
+
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 

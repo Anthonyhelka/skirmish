@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <div class="navbar-desktop ui three item fluid stackable menu">
+    <a class="navbar-button-desktop item" onclick="window.location.href='/'"><%= image_tag 'scuttlescrims-logo.png' %></a>
+    <div class="navbar-button-desktop item"><%= link_to "Edit Account", edit_user_registration_path %></div>
+    <div class="navbar-button-desktop item"><%= link_to("Sign Out", destroy_user_session_path, method: :delete) %></div>
+  </div>
+<% else %>
+  <div class="navbar-desktop ui three item inverted fluid stackable menu">
+    <a class="navbar-button-desktop item" onclick="window.location.href='/'"><%= image_tag "scuttlescrims-logo.png" %></a>
+    <div class="navbar-button-desktop item"><%= link_to "Log In", new_user_session_path %></div>
+    <div class="navbar-button-desktop item"><%= link_to "Sign Up", new_user_registration_path %></div>
+  </div>
+<% end %>
