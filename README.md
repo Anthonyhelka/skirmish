@@ -1,5 +1,5 @@
 # ScuttleScrims
-ScuttleScrims allows users a way to easily connect and plan competitive League of Legends matches with eachother. ScuttleScrims empowers amateur and collegiate League teams by making all the boring and often clunky parts of finding scrimmages as easy as possible.
+ScuttleScrims allows users a way to easily connect and plan competitive League of Legends matches with each other. ScuttleScrims empowers amateur and collegiate League teams by making all the boring and often clunky parts of finding scrimmages as easy as possible.
 
 <p align="center">
   <img src="/app/assets/images/scuttlescrims-logo.png?raw=true" alt="Synergy" width="150">
