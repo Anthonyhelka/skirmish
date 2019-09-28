@@ -72,6 +72,10 @@ body {
   text-align: center !important;
 }
 
+.flash-error-message {
+  margin-bottom: 10px !important;
+}
+
 .flash-error-message ul {
   padding: 0px !important;
   text-align: center !important;
@@ -82,6 +86,7 @@ body {
 .devise-container-desktop {
   text-align: center !important;
   margin: auto !important;
+  padding-bottom: 0px !important;
 }
 
 .devise-container-mobile {
@@ -90,7 +95,7 @@ body {
 
 .devise-container-desktop {
   width: 25% !important;
-  margin-top: 75px !important;
+  margin-top: 50px !important;
   border: 3px solid #61B38E !important;
 }
 
@@ -111,49 +116,41 @@ body {
   border: 1px solid #61B38E !important;
 }
 
-.devise-checkbox,
-.devise-submit {
+/* Devise Buttons */
+.devise-button-container {
+  padding-top: 10px !important;
   padding-bottom: 10px !important;
+}
+
+.devise-button {
+  background-color: #61B38E !important;
+}
+
+.devise-button:hover {
+  background-color: #4183c4 !important;
+}
+
+.devise-delete-button-container {
+  padding-bottom: 10px !important;
+}
+
+.devise-delete-button {
+  background-color: #9f3a38 !important;
+  border: 1px solid #FFFFFF !important;
+}
+
+.devise-delete-button:hover {
+  background-color: #fff6f6 !important;
+  color: #9f3a38 !important;
+  border: 1px solid #9f3a38 !important;
+}
+
+.devise-checkbox {
+  padding-top: 10px !important;
 }
 
 .devise-checkbox input {
   vertical-align: middle !important;
-}
-
-.devise-submit input,
-.devise-submit input:hover {
-  width: 115px !important;
-  height: 25px !important;
-  border-radius: 3px !important;
-  border: 1px solid black !important;
-  vertical-align: middle !important;
-}
-
-.devise-submit input {
-  background-color: #61B38E !important;
-  color: #FFFFFF !important;
-}
-
-.devise-submit input:hover {
-  background-color: #FFFFFF !important;
-  color: #61B38E !important;
-  border: 2px solid #61B38E !important;
-}
-
-.devise-delete-account input {
-  width: 140px !important;
-  height: 25px !important;
-  border-radius: 3px !important;
-  border: 1px solid black !important;
-  vertical-align: middle !important;
-  background-color: #b36186 !important;
-  color: #FFFFFF !important;
-}
-
-.devise-delete-account input:hover {
-  background-color: #FFFFFF !important;
-  color: #b36186 !important;
-  border: 2px solid #b36186 !important;
 }
 
 .devise-shared-links {

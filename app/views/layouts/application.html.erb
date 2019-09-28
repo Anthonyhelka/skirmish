@@ -9,16 +9,12 @@
 </head>
 <body>
 
-
   <% if detect_device == "mobile" %>
     <%= render "layouts/navbar_mobile" %>
   <% else %>
     <%= render "layouts/navbar_desktop" %>
   <% end %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  
   <%= yield %>
 
   <%- if Rails.env.development? || Rails.env.test? -%>

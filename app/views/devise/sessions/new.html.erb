@@ -1,19 +1,11 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 
-<% if detect_device == "mobile" %>
-  <div class="devise-container-mobile ui raised segment">
-<% else %>
-  <div class="devise-container-desktop ui raised segment">
-<% end %>
+<div class="devise-container-<%= detect_device %> ui raised segment">
   <div class="devise-image"><%= image_tag 'scuttlecrab.png' %></div>
-  <div class="devise-fields-container ui form">
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-      <div class="devise-fields">
-
-        <br />
-
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
+    <div class="devise-fields-container ui form">
+      <div class="devise-fields"><br />
         <div class="devise-field field">
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -23,28 +15,26 @@
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
       </div>
+    </div>
 
-      <br />
-
-      <% if devise_mapping.rememberable? %>
-        <div class="devise-checkbox ui checkbox">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end %>
-
-      <div class="devise-submit">
-        <%= f.submit "Login" %>
+    <% if devise_mapping.rememberable? %>
+      <div class="devise-checkbox ui checkbox">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
       </div>
     <% end %>
 
-    <div class="flash-error-message-container">
-      <%- flash.each do |key, value| -%>
-        <div class="ui negative message flash flash-<%= key %>">
-          <%= value %>
-        </div>
-      <%- end -%>
+    <div class="devise-button-container">
+      <%= f.button "Login", type: :submit, class: "devise-button ui primary button" %>
     </div>
+  <% end %>
+
+  <div class="flash-error-message-container">
+    <%- flash.each do |key, value| -%>
+      <div class="flash-error-message ui negative message flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
   </div>
 </div>
 
