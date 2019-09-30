@@ -33,5 +33,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-keys.env
 .env
+keys.env

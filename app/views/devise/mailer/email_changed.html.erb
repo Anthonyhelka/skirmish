@@ -1,7 +1,4 @@
-<div class="devise-image"><%= image_tag 'scuttlecrab.png' %></div>
-
 <p>Hey, <%= @email %>!</p>
-
 <% if @resource.try(:unconfirmed_email?) %>
   <p>We're ganking you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
 <% else %>
