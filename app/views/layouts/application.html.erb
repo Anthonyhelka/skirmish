@@ -16,6 +16,10 @@
     <%= render "layouts/navbar_desktop" %>
   <% end %>
 
+  <% if !notice.nil? %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+
   <%= yield %>
 
   <%- if Rails.env.development? || Rails.env.test? -%>
