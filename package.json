@@ -1,5 +1,5 @@
 {
-  "name": "scuttlescrims",
+  "name": "skirmish",
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
