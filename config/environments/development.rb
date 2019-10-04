@@ -34,10 +34,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
 
+  ActionMailer::Base.default :from => "admin@skirmish.gg"
   config.action_mailer.default_url_options = { :host => ENV.fetch("HOST_DOMAIN_DEV") }
 
   ActionMailer::Base.smtp_settings = {
-    :address        => "admin@skirmish.gg",
+    :address        => "smtp.sendgrid.net",
     :port           => 587,
     :authentication => :plain,
     :user_name      => ENV.fetch("SENDGRID_USER_NAME"),
