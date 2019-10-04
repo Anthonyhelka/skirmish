@@ -34,7 +34,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = { :host => "localhost" }
+  config.action_mailer.default_url_options = { :host => ENV.fetch("HOST_DOMAIN_DEV") }
 
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",
@@ -42,7 +42,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => ENV.fetch("SENDGRID_USER_NAME"),
     :password       => ENV.fetch("SENDGRID_PASSWORD"),
-    :domain         => "localhost",
+    :domain         => ENV.fetch("HOST_DOMAIN_DEV"),
     :enable_starttls_auto => true
   }
 
