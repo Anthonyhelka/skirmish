@@ -37,7 +37,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => ENV.fetch("HOST_DOMAIN_DEV") }
 
   ActionMailer::Base.smtp_settings = {
-    :address        => "smtp.sendgrid.net",
+    :address        => "admin@skirmish.gg",
     :port           => 587,
     :authentication => :plain,
     :user_name      => ENV.fetch("SENDGRID_USER_NAME"),
