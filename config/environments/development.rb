@@ -33,7 +33,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.asset_host = "http://localhost:3000"
+  config.action_mailer.asset_host = ENV.fetch("HOST_DOMAIN_DEV")
 
   ActionMailer::Base.default :from =>  "Skirmish <admin@skirmish.gg>"
   ActionMailer::Base.default :reply_to => "<admin@skirmish.gg>"
