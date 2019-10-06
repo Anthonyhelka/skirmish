@@ -1,6 +1,27 @@
-<p>Hey, <%= @email %>!</p>
-<% if @resource.try(:unconfirmed_email?) %>
-  <p>We're ganking you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
-<% else %>
-  <p>We're ganking you to notify you that your email has been changed to <%= @resource.email %>.</p>
-<% end %>
+<table style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #FFFFFF; padding-top: 25px; padding-bottom: 25px; border:3px solid #61B38E; border-radius: 4px;">
+  <tr>
+    <td style="background-color: #FFFFFF;">
+      <img class="max-width" style="display: block; margin: auto; color: #000000; max-width: 10% !important; width: 10%; height: auto !important;" width="48" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/5eb7713fc2512b97/cf4f0ed7-7756-47b5-a0cd-b42543fa8f74/640x640.png">
+    </td>
+  </tr>
+  <br />
+  <tr>
+    <td style="background-color: #FFFFFF;">
+      <div style="text-align: center;"><span style="color: #000000; font-size: 20px;">Hey, <%= @email %>!</span></div>
+    </td>
+  </tr>
+  <br />
+  <tr>
+    <td style="background-color: #FFFFFF;">
+      <div style="text-align: center;">
+        <span style="color: #000000; font-size: 14px; font-weight: 500;">
+          <% if @resource.try(:unconfirmed_email?) %>
+            We're ganking you to inform you that your email is being changed to <%= @resource.unconfirmed_email %>.
+          <% else %>
+            We're ganking you to inform you that your email has been changed to <%= @resource.email %>.
+          <% end %>
+        </span>
+      </div>
+    </td>
+  </tr>
+</table>
