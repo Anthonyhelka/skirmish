@@ -3,13 +3,14 @@
   <i class="navbar-dropdown-icon-mobile dropdown icon"></i>
   <div class="navbar-image-mobile default text"><%= image_tag 'scuttlescrims-logo.png' %></div>
   <div class="menu">
-    <div class="navbar-button-mobile item"><a onclick="window.location.href='/'">Home</a></div>
+    <a class="navbar-button-mobile item" onclick="window.location.href='/'">Home</a>
     <% if user_signed_in? %>
+      <a class="navbar-button-mobile item" onclick="window.location.href='/teams'">Team Manager</a>
       <%= link_to "Edit Account", edit_user_registration_path, class: "navbar-button-mobile item" %>
-      <%= link_to("Sign Out", destroy_user_session_path, method: :delete, class: "navbar-button-mobile item") %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-button-mobile-last item" %>
     <% else %>
       <%= link_to "Log In", new_user_session_path, class: "navbar-button-mobile item" %>
-      <%= link_to "Sign Up", new_user_registration_path, class: "navbar-button-mobile item" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "navbar-button-mobile-last item" %>
     <% end %>
   </div>
 </div>

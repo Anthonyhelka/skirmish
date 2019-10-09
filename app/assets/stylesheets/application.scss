@@ -50,8 +50,15 @@ body {
   margin-right: 0px !important;
 }
 
-.navbar-button-mobile div {
+.navbar-button-mobile {
   background-color: #FFFFFF !important;
+  overflow: hidden !important;
+}
+
+.navbar-button-mobile-last {
+  background-color: #FFFFFF !important;
+  border-bottom: 3px solid #21B714 !important;
+  overflow: hidden !important;
 }
 
 /* Messages */
