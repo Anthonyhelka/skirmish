@@ -31,7 +31,7 @@ class TeamsContainer extends Component {
   render(){
     let teams = this.state.teams.map(team => {
       return (
-        <p>{team.name}</p>
+        <p key={team.id}>{team.name}</p>
       );
     })
 
