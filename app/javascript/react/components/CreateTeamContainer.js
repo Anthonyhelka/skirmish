@@ -10,11 +10,11 @@ class CreateTeamContainer extends Component {
     this.state={
       name: ""
     }
-    this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
-  handleOnChange(event) {
+  handleChange(event) {
     let newData = event.target.value;
     this.setState({ [event.target.name]: newData });
   }
@@ -46,34 +46,24 @@ class CreateTeamContainer extends Component {
       .then(response => response.json())
       .then(body => {
         browserHistory.push('/teams');
-        window.location.reload();      
+        window.location.reload();
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-
-    this.clearForm();
-  }
-
-  clearForm() {
-    this.setState({ name: "" });
   }
 
   render(){
     return (
       <div>
-        <div>
-          <h2>Create Your Team</h2>
-          <br />
-          <form onSubmit={this.handleOnSubmit}>
-            <TextField
-              labelName="name"
-              inputName="name"
-              value={this.state.name}
-              handleOnChange={this.handleOnChange}
-            />
-            <br />
-            <input type="submit" className="button" value="Submit" />
-          </form>
-        </div>
+        <h2>Create A Team</h2>
+        <form onSubmit={this.handleOnSubmit}>
+          <TextField
+            labelName="Name"
+            inputName="name"
+            value={this.state.name}
+            handleChange={this.handleChange}
+          />
+          <input type="submit" className="button" value="Submit" />
+        </form>
       </div>
     );
   }

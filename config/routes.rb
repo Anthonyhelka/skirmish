@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :teams, only: [:index]
+      resources :teams, only: [:index, :destroy]
       post 'teams/create_team', to: 'teams#create_team'
     end
   end

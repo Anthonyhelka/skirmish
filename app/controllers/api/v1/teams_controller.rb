@@ -22,4 +22,16 @@ class Api::V1::TeamsController < ApplicationController
       render json: { error: team.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    team_id = JSON.parse(request.body.read)
+    team = Team.find(team_id)
+    user = current_user
+    if user.id == team.user_id || user.role == "admin"
+      team.delete
+      render json: {status: "204"}
+    else
+      render json: {status: "403"}
+    end
+  end
 end
