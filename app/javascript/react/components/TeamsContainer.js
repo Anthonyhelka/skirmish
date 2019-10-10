@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
+import { Button } from 'semantic-ui-react';
 
 class TeamsContainer extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class TeamsContainer extends Component {
 
     return (
       <div>
+        <Button as={ Link } to={'/teams/create_team'} >Create Team</Button>
         <p>hello from teams container</p>
         {teams}
       </div>
