@@ -1,14 +1,48 @@
+<% path = request.env['PATH_INFO'] %>
+
 <% if user_signed_in? %>
   <div class="navbar-desktop ui four item fluid stackable menu">
-    <a class="navbar-button-desktop item" onclick="window.location.href='/'"><%= image_tag 'scuttlescrims-logo.png' %></a>
-    <a class="navbar-button-desktop item" onclick="window.location.href='/teams'">Team Manager</a>
-    <%= link_to "Edit Account", edit_user_registration_path, class: "navbar-button-desktop item" %>
+    <% if path == "/" %>
+      <a class="navbar-button-desktop-active item" onclick="window.location.href='/'"><%= image_tag 'scuttlescrims-logo.png' %></a>
+    <% else %>
+      <a class="navbar-button-desktop item" onclick="window.location.href='/'"><%= image_tag 'scuttlescrims-logo.png' %></a>
+    <% end %>
+
+    <% if path == "/teams" %>
+      <a class="navbar-button-desktop-active item" onclick="window.location.href='/teams'">Team Manager</a>
+    <% else %>
+      <a class="navbar-button-desktop item" onclick="window.location.href='/teams'">Team Manager</a>
+    <% end %>
+
+    <% if path == "/users/edit" || path == "/users" %>
+      <%= link_to "Edit Account", edit_user_registration_path, class: "navbar-button-desktop-active item" %>
+    <% else %>
+      <%= link_to "Edit Account", edit_user_registration_path, class: "navbar-button-desktop item" %>
+    <% end %>
+
     <%= link_to("Sign Out", destroy_user_session_path, method: :delete, class: "navbar-button-desktop item") %>
   </div>
+
 <% else %>
+
   <div class="navbar-desktop ui three item inverted fluid stackable menu">
-    <a class="navbar-button-desktop item" onclick="window.location.href='/'"><%= image_tag "scuttlescrims-logo.png" %></a>
-    <%= link_to "Log In", new_user_session_path, class: "navbar-button-desktop item" %>
-    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-button-desktop item" %>
+    <% if path == "/" %>
+      <a class="navbar-button-desktop-active item" onclick="window.location.href='/'"><%= image_tag 'scuttlescrims-logo.png' %></a>
+    <% else %>
+      <a class="navbar-button-desktop item" onclick="window.location.href='/'"><%= image_tag 'scuttlescrims-logo.png' %></a>
+    <% end %>
+
+    <% if path == "/users/sign_in" %>
+      <%= link_to "Log In", new_user_session_path, class: "navbar-button-desktop-active item" %>
+    <% else %>
+      <%= link_to "Log In", new_user_session_path, class: "navbar-button-desktop item" %>
+    <% end %>
+
+    <% if path == "/users/sign_up" || path == "/users" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "navbar-button-desktop-active item" %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "navbar-button-desktop item" %>
+    <% end %>
+    
   </div>
 <% end %>

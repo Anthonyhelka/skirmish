@@ -22,6 +22,11 @@ body {
   border-bottom: 3px solid #000000 !important;
 }
 
+.navbar-button-desktop-active {
+  background-color: #444444 !important;
+  border-bottom: 3px solid #21B714 !important;
+}
+
 .navbar-button-desktop:hover {
   background-color: #444444 !important;
   border-bottom: 3px solid #21B714 !important;
@@ -34,6 +39,7 @@ body {
   padding-left: 0px !important;
   padding-right: 0px !important;
   z-index: 1 !important;
+  border-radius: 0px !important;
 }
 
 .navbar-mobile a {
@@ -55,10 +61,23 @@ body {
   overflow: hidden !important;
 }
 
-.navbar-button-mobile-last {
+.navbar-button-mobile-active {
+  background-color: #FFFFFF !important;
+  overflow: hidden !important;
+  font-weight: bold !important;
+}
+
+.navbar-button-mobile-last,
+.navbar-button-mobile-last-active {
   background-color: #FFFFFF !important;
   border-bottom: 3px solid #21B714 !important;
   overflow: hidden !important;
+}
+
+.navbar-button-mobile-last-active {
+  background-color: #FFFFFF !important;
+  overflow: hidden !important;
+  font-weight: bold !important;
 }
 
 /* Messages */
@@ -89,6 +108,7 @@ body {
 
 .devise-container-mobile {
   width: 100% !important;
+  border-radius: 0px !important;
 }
 
 .devise-container-desktop {
